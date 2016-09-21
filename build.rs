@@ -9,7 +9,7 @@ fn main() {
             println!("cargo:include={}", paths.to_str().unwrap());
             //Check if pkg_config result has ip4tc defined
             //TODO: see why it doesn't work on some systems
-            let ip4tc_found: bool = false;
+            let mut ip4tc_found: bool = false;
             for library in pc.libs {
                 if library.contains("ip4tc") {
                     ip4tc_found = true;
