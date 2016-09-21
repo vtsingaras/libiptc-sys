@@ -1,0 +1,17 @@
+[package]
+name = "libiptc-sys"
+version = "0.1.0"
+license = "GPLv3"
+authors = ["Vyronas Tsingaras <vyronas@vtsingaras.me>"]
+links = "libiptc"
+build = "build.rs"
+
+[lib]
+name = "libiptc_sys"
+path = "src/lib.rs"
+
+[build-dependencies]
+pkg-config = "0.3.*"
+
+[dependencies]
+libc = "0.2.*"
