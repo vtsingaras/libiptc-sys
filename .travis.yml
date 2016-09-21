@@ -1,9 +1,9 @@
-addons:
- apt:
-   packages:
-   - iptables-dev
-   - libcap-dev
-   - libnfnetlink-dev
+sudo: true
+
+before_script:
+  - sudo apt-get update -qq
+  - sudo apt-get upgrade -y
+  - sudo apt-get install iptables-dev libcap-dev
 
 language: rust
 rust:
