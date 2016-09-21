@@ -1,0 +1,14 @@
+addons:
+ apt:
+   packages:
+   - iptables-dev
+   - libcap-dev
+
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+matrix:
+  allow_failures:
+    - rust: nightly
