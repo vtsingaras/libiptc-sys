@@ -17,6 +17,7 @@ const IFNAMSIZ: usize = 16;
 const RS_CHAINLABEL_MAX_SIZE: usize = 32;
 
 pub type in_addr_t = u32;
+
 #[repr(C)]
 pub struct in_addr
 {
