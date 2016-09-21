@@ -1,4 +1,4 @@
-# libiptc-sys [![Build Status](https://travis-ci.org/vtsingaras/libiptc-sys.svg)](https://travis-ci.org/vtsingaras/libiptc-sys)
+# libiptc-sys [![Build Status](https://travis-ci.org/vtsingaras/libiptc-sys.svg)](https://travis-ci.org/vtsingaras/libiptc-sys) [![](https://img.shields.io/crates/v/libiptc-sys.svg)](https://crates.io/crates/libiptc-sys)
 Rust [ffi](https://doc.rust-lang.org/book/ffi.html) bindings to libiptc.
 
 ### Developer dependencies
