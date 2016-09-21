@@ -1,11 +1,13 @@
-sudo: true
+sudo: false
 
-before_script:
-  - sudo apt-get update -qq
-  - sudo apt-get upgrade -y
-  - sudo apt-get install iptables-dev libcap-dev
+addons:
+ apt:
+   packages:
+   - iptables-dev
+   - libcap-dev
 
 language: rust
+cache: cargo
 rust:
   - stable
   - beta
