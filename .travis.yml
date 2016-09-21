@@ -3,6 +3,7 @@ addons:
    packages:
    - iptables-dev
    - libcap-dev
+   - libnfnetlink-dev
 
 language: rust
 rust:
