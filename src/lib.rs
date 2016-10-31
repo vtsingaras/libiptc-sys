@@ -1,6 +1,6 @@
 #![allow(non_camel_case_types)]
 extern crate libc;
-use libc::{c_void, size_t, c_char, c_int, c_uint};
+use libc::{c_char, c_int, c_uint};
 
 
 pub enum xtc_handle {}
@@ -8,51 +8,51 @@ pub type iptc_handle = xtc_handle;
 pub type xt_chainlabel = *const i8;
 pub type ipt_chainlabel = xt_chainlabel;
 
-const IPTC_LABEL_ACCEPT: xt_chainlabel = b"ACCEPT\0" as *const u8 as *const i8;
-const IPTC_LABEL_DROP: xt_chainlabel = b"DROP\0" as *const u8 as *const i8;
-const IPTC_LABEL_QUEUE: xt_chainlabel = b"QUEUE\0" as *const u8 as *const i8;
-const IPTC_LABEL_RETURN: xt_chainlabel = b"RETURN\0" as *const u8 as *const i8;
+pub const IPTC_LABEL_ACCEPT: xt_chainlabel = b"ACCEPT\0" as *const u8 as *const i8;
+pub const IPTC_LABEL_DROP: xt_chainlabel = b"DROP\0" as *const u8 as *const i8;
+pub const IPTC_LABEL_QUEUE: xt_chainlabel = b"QUEUE\0" as *const u8 as *const i8;
+pub const IPTC_LABEL_RETURN: xt_chainlabel = b"RETURN\0" as *const u8 as *const i8;
 
 const IFNAMSIZ: usize = 16;
-const RS_CHAINLABEL_MAX_SIZE: usize = 32;
+pub const RS_CHAINLABEL_MAX_SIZE: usize = 32;
 
 pub type in_addr_t = u32;
 
 #[repr(C)]
 pub struct in_addr {
-    s_addr: in_addr_t,
+    pub s_addr: in_addr_t,
 }
 
 #[repr(C)]
 pub struct ipt_ip {
-    src: in_addr,
-    dst: in_addr,
-    smsk: in_addr,
-    dmsk: in_addr,
-    iniface: [i8; IFNAMSIZ],
-    outiface: [i8; IFNAMSIZ],
-    iniface_mask: [u8; IFNAMSIZ],
-    outiface_mask: [u8; IFNAMSIZ],
-    proto: u16,
-    flags: u8,
-    invflags: u8,
+    pub src: in_addr,
+    pub dst: in_addr,
+    pub smsk: in_addr,
+    pub dmsk: in_addr,
+    pub iniface: [i8; IFNAMSIZ],
+    pub outiface: [i8; IFNAMSIZ],
+    pub iniface_mask: [u8; IFNAMSIZ],
+    pub outiface_mask: [u8; IFNAMSIZ],
+    pub proto: u16,
+    pub flags: u8,
+    pub invflags: u8,
 }
 
 #[repr(C)]
 pub struct xt_counters {
-    pcnt: u64,
-    bcnt: u64,
+    pub pcnt: u64,
+    pub bcnt: u64,
 }
 
 #[repr(C)]
 pub struct ipt_entry {
-    ip: ipt_ip,
-    nfcache: c_uint,
-    target_offset: u16,
-    next_offset: u16,
-    comefrom: c_uint,
-    counters: xt_counters,
-    elems: [u8; 0],
+    pub ip: ipt_ip,
+    pub nfcache: c_uint,
+    pub target_offset: u16,
+    pub next_offset: u16,
+    pub comefrom: c_uint,
+    pub counters: xt_counters,
+    pub elems: [u8; 0],
 }
 
 extern "C" {
